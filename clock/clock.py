@@ -5,15 +5,15 @@ pygame.init()
 
 screen = pygame.display.set_mode((1400,1050))
 pygame.display.set_caption("Часы ")
-icon = pygame.image.load("photo.jpg")
+icon = pygame.image.load("clock/photo.jpg")
 pygame.display.set_icon(icon)
 fps = 24
-background = pygame.image.load("mainclock.png")
+background = pygame.image.load("clock/mainclock.png")
 
 clock = pygame.time.Clock()
 
-minhand = pygame.image.load("rightarm.png")
-sechand = pygame.image.load("leftarm.png")
+minhand = pygame.image.load("clock/rightarm.png")
+sechand = pygame.image.load("clock/leftarm.png")
 
 minrect = minhand.get_rect()
 minrect.center = ((700,525))
@@ -35,7 +35,7 @@ while run:
             exit()
 
     screen.blit(background, (0,0))
-    genminhand = pygame.transform.rotate(minhand, -1*((6*minvalue)%360))
+    genminhand = pygame.transform.rotate(minhand, -1*((6*minvalue+50)%360))
     genminrect = genminhand.get_rect()
     genminrect.center = minrect.center
 
